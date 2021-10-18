@@ -1,0 +1,194 @@
+.title {
+    font-size: 60px;
+    text-align: center;
+}
+
+.box-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-nav div {
+    padding: 10px;
+    border: 1px solid white;
+}
+
+.box {
+    flex-basis: 20%;
+    text-align: center;
+}
+
+.name {
+    justify-content: center;
+    text-align: center;
+}
+
+.flexContent {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexContent div {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.content {
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    flex: 1;
+    order: 1;
+}
+
+.t1 {
+    padding: 10px;
+    font-size: 20px;
+    position: absolute;
+    left: 100px;
+    opacity: 0;
+    transition: all 0.1s linear;
+}
+
+.t2 {
+    padding: 10px;
+    font-size: 20px;
+    position: absolute;
+    left: 90px;
+    opacity: 0;
+    transition: all 0.1s linear;
+}
+
+.start {
+    position: absolute;
+    left: 0px;
+    width: 300px;
+    opacity: 1;
+    transition: all 0.1s linear;
+}
+
+.question {
+    position: absolute;
+    left: 0px;
+    width: 300px;
+    opacity: 0;
+    transition: all 0.1s linear;
+}
+
+.kirpich {
+    position: absolute;
+    left: 160px;
+    top: 200px;
+    width: 50px;
+    opacity: 0;
+    transition: all 5s linear;
+}
+
+.fall {
+    position: absolute;
+    left: 0px;
+    width: 300px;
+    opacity: 0;
+    transition: all 0.1s linear;
+}
+
+.content:hover .start {
+    opacity: 0;
+}
+
+.content:hover .question {
+    opacity: 1;
+}
+
+.content:hover .t1 {
+    opacity: 1;
+}
+
+.content:hover .kirpich {
+    opacity: 1;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(15px, -15px) rotate(180deg);
+    }
+    50% {
+        transform: translate(40px, -40px) rotate(360deg);
+    }
+    75% {
+        transform: translate(70px, -70px) rotate(540deg);
+    }
+    100% {
+        transform: translate(150px, -150px) rotate(720deg);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(3px, 0px);
+    }
+    10% {
+        transform: translate(-3px, 0px);
+    }
+    20% {
+        transform: translate(-10px, 0px);
+    }
+    30% {
+        transform: translate(10px, 0px);
+    }
+    40% {
+        transform: translate(3px, 0px);
+    }
+    50% {
+        transform: translate(-3px, 0px);
+    }
+    60% {
+        transform: translate(-10px, 0px);
+    }
+    70% {
+        transform: translate(10px, 0px);
+    }
+    80% {
+        transform: translate(-3px, 0px);
+    }
+    90% {
+        transform: translate(10px, 0px);
+    }
+    100% {
+        transform: translate(-10px, 0px);
+    }
+}
+
+.content:active {
+    animation: shake 1s linear;
+}
+
+.content:active .t2 {
+    opacity: 1;
+}
+
+.content:active .t1 {
+    opacity: 0;
+}
+
+.content:active .question {
+    opacity: 0;
+}
+
+.content:active .start {
+    opacity: 0;
+}
+
+.content:active .kirpich {
+    opacity: 1;
+    animation: spin 1s linear;
+}
+
+.content:active .fall {
+    opacity: 1;
+}
